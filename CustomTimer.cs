@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Autici
@@ -15,26 +11,15 @@ namespace Autici
         private int remainingTime;
         private SoundPlayer soundPlayer;
         private string name;
-        private int time = 600;
+        private int initialTime = 600;
 
-        public int getTime(int time)
-        {
-            this.time = time;  
-            return this.time;
-        }
         public CustomTimer() { }
-        public CustomTimer(Label label, string soundFileName, string name)
+
+        public CustomTimer(Label label, string soundFileName, string name, int initialTime)
         {
             this.label = label;
             this.name = name;
-
-            if(time != 600) this.remainingTime = time;
-            else this.remainingTime = 600;
-
-            int minutes = remainingTime / 60;
-            int seconds = remainingTime % 60;
-
-            label.Text = $"{minutes:00}:{seconds:00}";
+            SetInitialTime(initialTime);
 
             timer = new Timer();
             timer.Interval = 1000;
@@ -46,26 +31,40 @@ namespace Autici
             soundPlayer = new SoundPlayer(soundFilePath);
         }
 
+        public void SetInitialTime(int newInitialTime)
+        {
+            this.initialTime = newInitialTime;
+            this.remainingTime = this.initialTime;
+            UpdateLabel();
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
-            int minutes = remainingTime / 60;
-            int seconds = remainingTime % 60;
-
-            label.Text = $"{minutes:00}:{seconds:00}";
             remainingTime--;
 
-            if (remainingTime < 0)
+            if (remainingTime >= 0)
             {
-                timer.Stop(); 
+                UpdateLabel();
+            }
+            else
+            {
+                timer.Stop();
                 soundPlayer.Play();
                 DialogResult result = MessageBox.Show($"Vreme isteklo za {name}", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (result == DialogResult.OK)
                 {
-                    label.Text = "10:00";
-                    remainingTime = 10 * 60 ; 
+                    SetInitialTime(initialTime);
                 }
             }
+        }
+
+        private void UpdateLabel()
+        {
+            int minutes = remainingTime / 60;
+            int seconds = remainingTime % 60;
+
+            label.Text = $"{minutes:00}:{seconds:00}";
         }
 
         public void StartTimer()
