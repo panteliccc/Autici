@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autici", "Autici.csproj", "{B7FAC7C5-A672-46DD-A3A9-E7BE67833E15}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AuticiSetup", "AuticiSetup\AuticiSetup.vdproj", "{BBABFAF8-5EE7-4C4A-8521-74FC9549F2AF}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AuticiSetup", "AuticiSetup\AuticiSetup.vdproj", "{84BE481B-0FAB-453F-86E6-0FA51EA6DAC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{B7FAC7C5-A672-46DD-A3A9-E7BE67833E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7FAC7C5-A672-46DD-A3A9-E7BE67833E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7FAC7C5-A672-46DD-A3A9-E7BE67833E15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BBABFAF8-5EE7-4C4A-8521-74FC9549F2AF}.Debug|Any CPU.ActiveCfg = Debug
-		{BBABFAF8-5EE7-4C4A-8521-74FC9549F2AF}.Release|Any CPU.ActiveCfg = Release
+		{84BE481B-0FAB-453F-86E6-0FA51EA6DAC0}.Debug|Any CPU.ActiveCfg = Debug
+		{84BE481B-0FAB-453F-86E6-0FA51EA6DAC0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

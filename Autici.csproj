@@ -109,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="car_transportation_automobile_cars_transport_icon_133087.ico" />
+    <Content Include="Resources\bell.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

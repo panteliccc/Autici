@@ -25,9 +25,8 @@ namespace Autici
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
 
-            string executableDirectory = Application.StartupPath;
-            string soundFilePath = System.IO.Path.Combine(executableDirectory, soundFileName);
-
+            string executableDirectory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string soundFilePath = System.IO.Path.Combine(executableDirectory, "Resources", soundFileName);
             soundPlayer = new SoundPlayer(soundFilePath);
         }
 
